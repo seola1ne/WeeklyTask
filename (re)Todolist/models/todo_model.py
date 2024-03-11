@@ -11,7 +11,7 @@ class TodoList:
         
     def complete_task(self, index):
         if 0 <= index < len(self.tasks):
-            self.tasks[index]['complete'] = True
+            self.tasks[index]['completed'] = True
         
     def delete_task(self, index):
         if 0 <= index < len(self.tasks):
