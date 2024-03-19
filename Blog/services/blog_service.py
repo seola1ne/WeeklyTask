@@ -5,7 +5,7 @@ class BlogService:
        self.blog_db = BlogDB()
        
    def get_posts(self):
-       return self.blog_db.getAll()
+       return self.blog_db.get_all()
    
    def get_post(self, id):
        return self.blog_db.getOne(id)

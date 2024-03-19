@@ -6,7 +6,7 @@ class BlogDB:
        self.cur = self.db.cursor()
        print("connect ok")
        
-   def getAll(self):
+   def get_all(self):
        sql = "select * from blog"
        self.cur.execute(sql)
        result = self.cur.fetchall()
