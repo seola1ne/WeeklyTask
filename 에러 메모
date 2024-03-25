@@ -1,0 +1,30 @@
+## 1. 'cryptography' package is required for sha256_password
+
+```
+RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+```
+
+<br />
+
+### 해결 방법 1. 패키지 재설치
+
+```
+pip uninstall cryptography
+```
+
+```
+pip install cryptography
+```
+
+<br />
+
+### 해결 방법 2. DB 이름 확인
+```python
+        self.db = pymysql.connect(host='localhost', user='root', password='0000', db='weeklytask')
+```
+예를 들어 이런 코드에서 db 이름이 본인이 사용 중인 db의 이름과 같은지 확인하자.
+
+### 해결 방법 3. SQL 구문 확인
+SQL 구문 중 없는 Column이 들어간 건 아닌지 확인하자.
+
+<br />
