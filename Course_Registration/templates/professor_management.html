@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor Management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Professor Management</h1>
+        <hr>
+        <h2>Register Professor</h2>
+        <form method="POST" action="/register_professor">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label for="major">Professor Major:</label>
+                <input type="text" class="form-control" id="major" name="major" placeholder="Enter Professor major">
+            </div>
+            <div class="form-group">
+                <label for="email">Professor Email:</label>
+                <input type="text" class="form-control" id="email" name="email" placeholder="Enter Professor Email">
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+        <hr>
+        <h2>Professor List</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Major</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for professor in professors %}
+                <tr>
+                    <td>{{ professor.name }}</td>
+                    <td>{{ professor.major }}</td>
+                    <td>{{ professor.email }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

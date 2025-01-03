@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>답변 수정</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>답변 수정</h2>
+        <form method="POST" action="/answer_edit">
+            <div class="form-group">
+                <label for="userId">사용자 ID</label>
+                <input type="text" class="form-control" id="userId" placeholder="사용자 ID">
+            </div>
+            <div class="form-group">
+                <label for="userName">사용자 이름</label>
+                <input type="text" class="form-control" id="userName" placeholder="사용자 이름">
+            </div>
+            <div class="form-group">
+                <label for="questionContent">질문 내용</label>
+                <textarea class="form-control" id="questionContent" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="answerContent">답변 내용</label>
+                <textarea class="form-control" id="answerContent" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="answerDate">답변 날짜</label>
+                <input type="date" class="form-control" id="answerDate">
+            </div>
+            <button type="submit" class="btn btn-success">수정 완료</button>
+        </form>
+    </div>
+</body>
+</html>

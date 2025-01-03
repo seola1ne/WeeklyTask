@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>답변 목록</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>답변 목록</h2>
+        <a href="/answer_add" class="btn btn-primary mb-3">답변 등록</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>사용자 이름</th>
+                    <th>질문 내용</th>
+                    <th>답변 내용</th>
+                    <th>답변 날짜</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for answer in answers %}
+                <tr>
+                    <td>{{ answer.user_name }}</td>
+                    <td>{{ answer.question_contents }}</td>
+                    <td>{{ answer.answer_contents }}</td>
+                    <td>{{ answer.answer_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

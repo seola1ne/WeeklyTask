@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>답변 등록</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>답변 등록</h2>
+        <form method="POST" action="/answer_add">
+            <div class="form-group">
+                <label for="userName">사용자 이름</label>
+                <input type="text" class="form-control" id="userName" name="userName" placeholder="사용자 이름 입력">
+            </div>
+            <div class="form-group">
+                <label for="questionContent">질문 내용</label>
+                <select class="form-control" id="question_id" name="questionId">
+                    {% for question in questions %}
+                    <option value="{{ question.id }}">{{ question.contents }}</option>
+                    {% endfor %}
+                </select>
+            </div>            
+            <div class="form-group">
+                <label for="answerContent">답변 내용</label>
+                <textarea class="form-control" id="answerContents" name="answerContents" rows="3" placeholder="답변 내용"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="answerDate">답변 날짜</label>
+                <input type="date" class="form-control" id="answerDate" name="answerDate">
+            </div>
+            <button type="submit" class="btn btn-primary">등록</button>
+        </form>
+    </div>
+</body>
+</html>

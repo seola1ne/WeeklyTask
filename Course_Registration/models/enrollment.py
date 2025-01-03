@@ -9,7 +9,7 @@ class EnrollmentDB:
             student_id int NOT NULL,
             course_id int NOT NULL,
             FOREIGN KEY(student_id) references student (id),
-            FOREIGN KEY(course_id) references courese (id),
+            FOREIGN KEY(course_id) references course (id),
             UNIQUE INDEX(student_id, course_id),
             PRIMARY KEY(id)
             )
